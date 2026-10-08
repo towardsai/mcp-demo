@@ -1,0 +1,23 @@
+{
+  "name": "mcp-trainer-demo-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A tiny public MCP demo server for a 30-minute MCP training. Runs on Cloudflare Workers. No sign-in. Holds nothing private.",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "delete": "wrangler delete",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "agents": "0.27.0",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "5.20261007.1",
+    "typescript": "5.9.3",
+    "wrangler": "4.148.0"
+  }
+}

@@ -1,0 +1,28 @@
+{
+	// TypeScript settings. You normally do not need to change this file.
+	"compilerOptions": {
+		// Use modern JavaScript. Cloudflare Workers support it.
+		"target": "es2022",
+		"lib": ["es2022"],
+		"module": "es2022",
+		"moduleResolution": "bundler",
+
+		// Tell TypeScript about the Cloudflare Workers built-ins
+		// (Request, Response, DurableObjectNamespace, and so on).
+		"types": ["@cloudflare/workers-types"],
+
+		// Catch mistakes early.
+		"strict": true,
+
+		// Only check the types. Wrangler does the actual build.
+		"noEmit": true,
+
+		// Do not type-check the packages we install, only our own code.
+		"skipLibCheck": true,
+
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"isolatedModules": true
+	},
+	"include": ["src"]
+}

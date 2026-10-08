@@ -1,0 +1,44 @@
+/**
+ * Wrangler is Cloudflare's command line tool. This file tells it how to
+ * deploy the Worker. Based on Cloudflare's "remote-mcp-authless" template.
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+
+	// The name of the Worker. It becomes part of the public address:
+	// https://mcp-trainer.<your-subdomain>.workers.dev
+	"name": "mcp-trainer",
+
+	// The file where the server code starts.
+	"main": "src/index.ts",
+
+	// Which version of the Workers runtime behavior to use.
+	"compatibility_date": "2026-09-01",
+
+	// The MCP packages need some Node.js built-ins.
+	"compatibility_flags": ["nodejs_compat"],
+
+	// McpAgent runs inside a Durable Object: a small piece of compute and
+	// storage that Cloudflare manages. These two blocks declare it.
+	// "McpTrainer" must match the class name in src/index.ts.
+	// "MCP_OBJECT" is the name McpAgent looks for by default.
+	"durable_objects": {
+		"bindings": [
+			{
+				"class_name": "McpTrainer",
+				"name": "MCP_OBJECT"
+			}
+		]
+	},
+	"migrations": [
+		{
+			"tag": "v1",
+			"new_sqlite_classes": ["McpTrainer"]
+		}
+	],
+
+	// Keep logs, so you can see requests in the Cloudflare dashboard.
+	"observability": {
+		"enabled": true
+	}
+}
