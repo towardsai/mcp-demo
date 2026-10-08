@@ -1,0 +1,12 @@
+# Python
+.venv
+.venv-workers
+python_modules
+src/vendor
+pylock.toml
+__pycache__
+
+# Node and Wrangler
+node_modules
+.wrangler
+.dev.vars

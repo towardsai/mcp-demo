@@ -1,0 +1,15 @@
+[project]
+name = "mcp-trainer-py"
+version = "1.0.0"
+description = "A tiny public MCP demo server for a 30-minute MCP training. Python version, runs on Cloudflare Python Workers."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "mcp==2.2.0",
+]
+
+[dependency-groups]
+dev = [
+    "workers-py",
+    "workers-runtime-sdk",
+]

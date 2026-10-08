@@ -1,0 +1,14 @@
+{
+	"name": "mcp-trainer-py",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Python version of the MCP Trainer demo server. Runs on Cloudflare Python Workers.",
+	"scripts": {
+		"dev": "uv run pywrangler dev",
+		"deploy": "uv run pywrangler deploy",
+		"delete": "npx wrangler delete"
+	},
+	"devDependencies": {
+		"wrangler": "4.148.0"
+	}
+}

@@ -1,0 +1,26 @@
+/**
+ * Wrangler is Cloudflare's command line tool. This file tells it how to
+ * deploy the Worker. Based on Cloudflare's official Python "mcp-server"
+ * example: https://github.com/cloudflare/python-workers-examples
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+
+	// The name of the Worker. It becomes part of the public address:
+	// https://mcp-trainer-py.<your-subdomain>.workers.dev
+	"name": "mcp-trainer-py",
+
+	// The file where the server code starts.
+	"main": "src/entry.py",
+
+	// Which version of the Workers runtime behavior to use.
+	"compatibility_date": "2026-09-07",
+
+	// Turn on Python Workers, using Python 3.14.
+	"compatibility_flags": ["python_workers", "python_workers_314"],
+
+	// Keep logs, so you can see requests in the Cloudflare dashboard.
+	"observability": {
+		"enabled": true
+	}
+}
