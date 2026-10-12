@@ -1,0 +1,7 @@
+{
+	"name": "mcp-trainer",
+	"displayName": "MCP Trainer",
+	"version": "1.0.0",
+	"description": "A demo plugin for a 30-minute MCP training. It connects Claude to the public MCP Trainer server and ships one skill that builds a playable quiz game about MCP from the server's questions.",
+	"author": { "name": "Omar Solano" }
+}

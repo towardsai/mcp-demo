@@ -33,6 +33,24 @@ same texts. Pick the language you want to read.
 
 Each folder has its own README with the exact deploy steps.
 
+## Install as a plugin (Claude Code)
+
+This repo is also a plugin marketplace. In Claude Code, type these two
+commands:
+
+```
+/plugin marketplace add towardsai/mcp-demo
+/plugin install mcp-trainer@mcp-demo
+```
+
+The plugin carries one skill, `build-quiz-game`, plus a pointer to the
+deployed server. The repo itself runs nothing: the server must stay deployed
+on Cloudflare, and the plugin's `.mcp.json` holds its address.
+
+On plain claude.ai there are no plugins. Add the server's `/mcp` address as a
+custom connector instead. You then get the tools and the prompt, but not the
+skill.
+
 ## Where it runs
 
 Both versions run on Cloudflare Workers. Cloudflare Workers is a service that
